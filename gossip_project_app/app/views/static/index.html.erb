@@ -1,0 +1,16 @@
+<h1>Hello ma ptite salope !</h1>
+
+<p>Voici les potins :</p><br><br>
+
+ <%= @gossip.each do |gossips|%>
+<div class="div_main">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Auteur: <u><%=User.find(gossips.user_id).first_name%> <%=User.find(gossips.user_id).last_name%></u></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Titre: <%= gossips.title %></h6>
+    <p class="card-text">Si tu es curieux, tu peux cliquer sur le lien ci-dessous pour aller découvrir le contenu de ce gossip</p>
+    <a href="http://localhost:3000/potin/<%=gossips.id%>" class="card-link">Lien du Gossip</a>
+  </div>
+</div>
+</div>
+<% end %>
